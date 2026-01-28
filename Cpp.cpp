@@ -2,16 +2,10 @@
 using namespace std;
 
 int main() {
-    int marks;
-    cout << "Enter your marks: ";
-    cin >> marks;
-
-    if (marks >= 90) {
-        cout << "Grade - A";
-    } else if (marks < 90 && marks >=80) {
-        cout << "Grade - B";
-    } else {
-        cout << "Grade - C";
+    int n = 1;
+    while (n <= 5) {
+        cout << n << "\n";
+        n++;
     }
     return 0;
 }
