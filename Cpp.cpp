@@ -2,8 +2,9 @@
 using namespace std;
 
 int main() {
-    int age;
-    cout << "Enter your age:";
-    cin >> age;
-    cout << "Your age is " << age;
+    int a = 10;
+    int b = ++a;
+    cout << a << "\n";
+    cout << b;
+    return 0;
 }
