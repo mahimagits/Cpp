@@ -2,6 +2,8 @@
 using namespace std;
 
 int main() {
-    cout << "Mahima\nJha";
-    return 0;
+    int age;
+    cout << "Enter your age:";
+    cin >> age;
+    cout << "Your age is " << age;
 }
