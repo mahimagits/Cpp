@@ -2,14 +2,14 @@
 using namespace std;
 
 int main() {
-    int count = 1, n;
+    int fact = 1, n, i = 1;
     cout << "Enter a number: ";
     cin >> n;
 
-    while(count <= n) {
-        count = count * count;
-        count++;
-        cout << count<<"\n";
+    while(i <= n) {
+        fact *= i;
+        i++;
+        cout << fact<<"\n";
     }
     
     return 0;
