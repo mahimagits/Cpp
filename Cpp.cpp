@@ -2,10 +2,15 @@
 using namespace std;
 
 int main() {
-    int n = 1;
-    while (n <= 5) {
-        cout << n << "\n";
-        n++;
+    int count = 1, n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    while(count <= n) {
+        count = count * count;
+        count++;
+        cout << count<<"\n";
     }
+    
     return 0;
 }
