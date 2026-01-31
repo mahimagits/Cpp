@@ -76,14 +76,50 @@ using namespace std;
 
 
 //Triangle Pattern
-int main() {
-    int rows = 5;
+// int main() {
+//     int rows = 5;
 
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << "* ";
-        }
-        cout << endl;
-    }
-    return 0;
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << "* ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+//Implement the inline function, reference pointers, new and delete operation for dynamic
+
+
+// inline int square(int x)
+// {
+//     return x * x;
+// }
+
+// int main(){
+//     int num;
+
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     cout << "Square of " << num << " is: " << square(num) << endl;
+
+//     return 0;
+// }
+
+// int main(){
+//     int x = 10;
+//     int &ref = x;
+
+//     ref = 20;
+//     cout << ref;
+// }
+   
+int main() {
+    int x = 10;
+    int *p = &x;
+    cout << p;
 }
+
+
