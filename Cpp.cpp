@@ -116,10 +116,14 @@ using namespace std;
 //     cout << ref;
 // }
    
-int main() {
-    int x = 10;
-    int *p = &x;
-    cout << p;
-}
+// int main() {
+//     int x = 10;
+//     int *p = &x;
+//     cout << p;
+// }
 
+
+int main(){
+    cout << "Mahima Jha";
+}
 
