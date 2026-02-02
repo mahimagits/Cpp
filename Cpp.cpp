@@ -124,6 +124,13 @@ using namespace std;
 
 
 int main(){
-    cout << "Mahima Jha";
+    char x;
+    cout << "Enter a alphabet: ";
+    cin >> x;
+    if (x >= 'a' && x <= 'z'){
+        cout << "Lowercase";
+    } else {
+        cout << "Uppercase";
+    }
 }
 
