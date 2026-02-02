@@ -2,16 +2,17 @@
 using namespace std;
 
 int main() {
-    int n, sum = 0;
+    int n;
     cout << "Enter a number: ";
     cin >> n;
-    for (int i = 1; i <= n; i++){
-        if(i % 2 == 0){
-            continue;
+    for(int i = 2; i < n; i++){
+        if (n%i == 0){
+            cout << "The given number is not a prime number";
+            break;
         } else {
-            sum += i;
+            cout << "The given number is a PRIME NUMBER";
+            break;
         }
     }
-    cout << sum << endl;
     return 0;
 }
