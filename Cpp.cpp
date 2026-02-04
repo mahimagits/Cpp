@@ -2,14 +2,17 @@
 using namespace std;
 
 int main(){
-    for(int i = 1; i <= 100; i++){
-        if (i%2 == 0) {
-            cout << i << endl;
-        }
-        if (i == 20) {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    for(int i = 2; i <= n-1; i++){
+        if(n%i == 0){
+            cout << "Non Prime";
+            break;
+        }else{
+            cout << "Prime";
             break;
         }
     }
     return 0;
 }
-
