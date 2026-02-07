@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e0e1a;
+  color: #fff;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 40px;
+  text-align: center;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2 {
+  font-weight: 500;
+}
+
+p {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 24px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #f2b6c6;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.music-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+.list {
+  text-align: left;
+}
+
+img {
+  width: 260px;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.slider button {
+  margin: 10px;
+}
+
+#promiseHeart {
+  font-size: 50px;
+  cursor: pointer;
+  animation: float 1.8s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+}
+
+#noBtn {
+  position: absolute;
+}
+
+.final {
+  max-width: 500px;
+}

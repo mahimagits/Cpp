@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>If This Is the Beginning</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+  <h1>If this is the beginning…</h1>
+  <p>then I wanted to start it properly.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <p>
+    Meeting you didn’t feel dramatic.<br>
+    It felt… easy.<br><br>
+    Like something that wasn’t forced.
+  </p>
+  <button onclick="next()">Go on</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <p>
+    I like the way we’re learning each other.<br>
+    Slowly. Genuinely.<br><br>
+    No pressure. Just intention.
+  </p>
+  <button onclick="next()">That matters</button>
+</div>
+
+<!-- SLIDE 4 – FUTURE -->
+<div class="slide">
+  <h2>Things I’m excited about</h2>
+  <p class="list">
+    • late-night conversations<br>
+    • shared jokes only we understand<br>
+    • comfort growing naturally<br>
+    • choosing each other, little by little
+  </p>
+  <button onclick="next()">Picture this</button>
+</div>
+
+<!-- SLIDE 5 – PHOTOS -->
+<div class="slide">
+  <h2>Moments (so far)</h2>
+  <img id="photo" src="img1.jpg">
+  <div class="slider">
+    <button onclick="prevImg()">←</button>
+    <button onclick="nextImg()">→</button>
+  </div>
+  <p class="note">(more memories loading…)</p>
+  <button onclick="next()">One last thing</button>
+</div>
+
+<!-- SLIDE 6 – INTERACTION -->
+<div class="slide">
+  <h2>A small promise</h2>
+  <p>
+    Click the heart if you believe<br>
+    beginnings deserve care.
+  </p>
+  <div id="promiseHeart" onclick="next()">🤍</div>
+</div>
+
+<!-- SLIDE 7 – ASK -->
+<div class="slide">
+  <h2>So…</h2>
+  <p>
+    If this is just the start,<br>
+    and we’re still figuring things out…
+  </p>
+
+  <p><strong>Would you like to be my Valentine?</strong></p>
+
+  <div class="buttons">
+    <button onclick="yes()">Yes</button>
+    <button id="noBtn" onmouseover="moveNo()">Not yet</button>
+  </div>
+</div>
+
+<!-- SLIDE 8 – YES -->
+<div class="slide">
+  <h1>I’m really glad you’re here 🤍</h1>
+  <p class="final">
+    No expectations.<br>
+    Just honesty.<br>
+    And something we can grow into.
+    <br><br>
+    Happy Valentine’s Day.
+  </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
