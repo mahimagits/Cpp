@@ -8,9 +8,9 @@ int printHello(){
 }
 
 //Calculate sum of two numbers
-int calcSum(int a, int b){
-    return a+b;
-}
+// int calcSum(int a, int b){
+//     return a+b;
+// }
 
 // calculate minimum of two numbers
 int min(int a, int b){
@@ -21,9 +21,52 @@ int min(int a, int b){
     }
 }
 
+// Calculate sum of numbers from 1 to n
+int calcSum(int n){
+    int sum = 0;
+    for(int i = 0; i <=n; i++){
+        sum += i;
+    }
+    return sum;
+}
 
+int calcFact(int n){
+    int fact = 1;
+    for(int i = 1; i <= n; i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+int calcDigitSum(int num){
+    int digitSum = 0;
+    while(num > 0){
+        int n = num % 10;
+        digitSum += n;
+        num = num/10;
+    }
+    return digitSum;
+}
+
+int calcBinCoeff(int n, int r){
+    if(n > r){
+    int nFact = 1;
+    for(int i = 1; i <= n; i++){
+        nFact *= i;
+    }
+    int rFact = 1;
+    for(int i = 1; i <= r ; i++){
+        rFact *= i;
+    }
+    int fact = 1;
+    for(int i = 1; i <= (n-r); i++){
+        fact *= i;
+    }
+    return nFact/(rFact*fact);
+    } else {
+        return false;
+    }
+}
 int main(){
-    int minimum = min(100, 117);
-    cout << "Minimum Number = " << minimum << endl;
-    return 0;
+    cout << calcBinCoeff(6, 3);
 }
