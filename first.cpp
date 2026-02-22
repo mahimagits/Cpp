@@ -67,6 +67,30 @@ int calcBinCoeff(int n, int r){
         return false;
     }
 }
+
+void isPrime(int n){
+    for(int i = 2; i < n; i++){
+        if (n%i == 0){
+            cout << "Non Prime Number";
+            break;
+        }else{
+            cout << "Prime Number";
+            break;
+        }
+    }
+}
+
+void primeNum(int n){
+    for(int i = 2; i < n; i++){
+        if(n%i == 0){
+            i++;
+        }else{
+            cout << i << endl;
+        }
+    }
+}
 int main(){
-    cout << calcBinCoeff(6, 3);
+    int n = 5;
+    int num = 2;
+    while (num)
 }
