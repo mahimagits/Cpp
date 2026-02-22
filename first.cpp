@@ -1,19 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    int n = 4;
-    for (int i = 0; i < n; i++){
-        for (int j = n; j > i+1; j--){
-            cout << " ";
-        }
-        for (int k = 0; k < i+1; k++){
-            cout << k+1;
-        }
-        for (int l = i; l > 0; l--){
-            cout << l;
-        }
-        cout << endl;
+//function definition
+int printHello(){
+    cout << "Hello World\n";
+    return 3;
+}
+
+//Calculate sum of two numbers
+int calcSum(int a, int b){
+    return a+b;
+}
+
+// calculate minimum of two numbers
+int min(int a, int b){
+    if(a > b){
+        return b;
+    }else {
+        return a;
     }
+}
+
+
+int main(){
+    int minimum = min(100, 117);
+    cout << "Minimum Number = " << minimum << endl;
     return 0;
 }
