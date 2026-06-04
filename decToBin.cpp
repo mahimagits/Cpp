@@ -15,6 +15,7 @@ int main(){
     }
     cout << "Binary number : " << ans << endl;
 
+//Binary to Decimal
     int n;
     cout << "Enter a binary number : ";
     cin >> n;
