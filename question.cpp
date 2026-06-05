@@ -53,6 +53,7 @@ int main(){
     cout << ans;
     }
 
+    //Power of 2
     int n;
     cout << "Enter a number : ";
     cin >> n;
@@ -70,5 +71,5 @@ int main(){
     } else {
         cout << "False" << endl;
     }
-    return 0;
+    
 }
