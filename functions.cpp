@@ -17,21 +17,34 @@ string evenOrOdd(int num) {
     }
 }
 
+int factorial(int num){
+    int fact = 1;
+    for(int i = 1; i <= num; i++){
+        fact *= i;
+    }
+    return fact;
+}
+
 int nCr(int n, int r){
-    int num = 1;
-    for(int i = n; i > 0; i--){
-        num *= i;
-    }
-    int den1 = 1;
-    for(int i = r; i > 0; i--){
-        den1 *= i;
-    }
-    int den2 = 1;
-    for(int i = (n - r); i > 0; i--){
-        den2 *= i;
-    }
-    int ans = (num)/(den1 * den2);
+    int num = factorial(n);
+    int deno = factorial(r) * factorial(n - r);
+    int ans = num/deno;
     return ans;
+}
+
+void printCounting(int n){
+    for(int i = 1; i <= n; i++){
+        cout << i << " ";
+    }
+}
+
+bool isPrime(int n){
+    for(int i = 2; i < n; i++){
+        if(n % i == 0){
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int main(){
@@ -39,6 +52,12 @@ int main(){
     cout << evenOrOdd(6) << endl;
     cout << evenOrOdd(7) << endl;
     cout << nCr(8, 2) << endl;
-
+    printCounting(10);
+    cout << endl;
+    if(isPrime(7)){
+        cout << "Prime Number";
+    } else {
+        cout << "Not a prime number";
+    }
     return 0;
 }
