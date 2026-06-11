@@ -47,17 +47,42 @@ bool isPrime(int n){
     return 1;
 }
 
-int main(){
-    cout << power(6, 3) << endl;
-    cout << evenOrOdd(6) << endl;
-    cout << evenOrOdd(7) << endl;
-    cout << nCr(8, 2) << endl;
-    printCounting(10);
-    cout << endl;
-    if(isPrime(7)){
-        cout << "Prime Number";
-    } else {
-        cout << "Not a prime number";
+int decToBin(int n){
+    int ans = 0, power = 1;
+    while (n != 0){
+        int digit = n % 2;
+        ans += digit * power;
+        power *= 10;
+        n = n/2;
     }
+    return ans;
+}
+
+int numOfBits(int n){
+    int bin = decToBin(n);
+    int count = 0;
+    while (bin > 0){
+        int digit = bin % 10;
+        if (digit == 1){
+            count++;
+        }
+        bin = bin / 10;
+    }
+    return count;
+} 
+
+int fibnacci(int n){
+    int a = 0, b = 1;
+    int fib;
+    for(int i = 2; i < n; i++){
+        fib = a + b;
+        a = b;
+        b = fib;
+    }
+    return fib;
+}
+
+int main(){
+    cout << fibnacci(5) << endl;
     return 0;
 }
