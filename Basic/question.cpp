@@ -72,29 +72,43 @@ int main(){
     //     cout << "False" << endl;
     // }
 
-    int totalAmount = 1330;
+    // int totalAmount = 1330;
 
-    int note100, note50, note20, note1;
-    switch (1)
-    {
-    case 1:
-        note100 = totalAmount/100;
-        totalAmount = totalAmount%100;
-        cout << "100 rupees note: " << note100 << endl;
-    case 2:
-        note50 = totalAmount/50;
-        totalAmount = totalAmount%50;
-        cout << "50 rupees note: " << note50 << endl;
-    case 3:
-        note20 = totalAmount/20;
-        totalAmount = totalAmount%20;
-        cout << "20 rupees note: " << note20 << endl;
-    case 4:
-        note1 = totalAmount/1;
-        cout << "1 rupees note: " << note1 << endl;               
-    default:
-        break;
+    // int note100, note50, note20, note1;
+    // switch (1)
+    // {
+    // case 1:
+    //     note100 = totalAmount/100;
+    //     totalAmount = totalAmount%100;
+    //     cout << "100 rupees note: " << note100 << endl;
+    // case 2:
+    //     note50 = totalAmount/50;
+    //     totalAmount = totalAmount%50;
+    //     cout << "50 rupees note: " << note50 << endl;
+    // case 3:
+    //     note20 = totalAmount/20;
+    //     totalAmount = totalAmount%20;
+    //     cout << "20 rupees note: " << note20 << endl;
+    // case 4:
+    //     note1 = totalAmount/1;
+    //     cout << "1 rupees note: " << note1 << endl;               
+    // default:
+    //     break;
+    // }
+
+    // Number of 1 bits
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    int count = 0;
+    while(n != 0){
+        if(n & 1){
+            count++;
+        }
+        n = (n >> 1);
     }
+
+    cout << "Number of 1 bits : " << count << endl;
 
     return 0;
 }
