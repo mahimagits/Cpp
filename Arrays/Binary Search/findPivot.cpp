@@ -17,7 +17,7 @@ int getPivot(int arr[], int size){
 }
 
 int main(){
-    int arr[5] = {3, 5, 7, 1, 9};
+    int arr[5] = {7, 9, 1, 2, 3};
     cout << "Pivot element is at index " << getPivot(arr, 5) << endl;
 
     return 0;
