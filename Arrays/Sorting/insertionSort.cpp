@@ -9,20 +9,18 @@ void printVector(vector<int> &arr, int n){
 }
 
 void insertionSort(vector<int> &arr, int n){
-    int i = 1;
-    while(i < n){
+    for(int i = 0; i < n; i++){
         int temp = arr[i];
         int j = i - 1;
         while(j >= 0){
             if(arr[j] > temp){
-                arr[j+1] = arr[j];
-            } else {
+                arr[j + 1] = arr[j];
+            }else{
                 break;
             }
             j--;
         }
-        arr[j+1] = temp;
-        i++;
+        arr[j + 1] = temp;
     }
 }
 
