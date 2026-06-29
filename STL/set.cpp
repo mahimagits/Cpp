@@ -2,6 +2,8 @@
 // All elements are unique (no duplicates).
 // Elements are stored in ascending order by default.
 
+//Time Complexity - O(logn)
+
 #include <iostream>
 #include <set>
 using namespace std;
@@ -31,6 +33,14 @@ int main() {
     s.insert(1);
 
     cout << "\nValue present or not : " << s.count(5) << endl;
+
+    // find() -> Searches for an element
+    auto itr = s.find(4);
+
+    if(itr != s.end())
+        cout << "Found";
+    else
+        cout << "Not Found";
 
     return 0;
 }
