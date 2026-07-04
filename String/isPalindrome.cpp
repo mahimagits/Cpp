@@ -1,11 +1,34 @@
 #include <iostream>
 using namespace std;
 
-bool isPalindrome(char s[], int n){
+char toLowerCase(char ch){
+    if((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')){
+        return ch;
+    } else {
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+}
+
+bool valid(char ch){
+    if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')){
+        return 1;
+    }
+    return 0;
+}
+
+bool isPalindrome(string s){
+    string temp = "";
+    for(int i = 0; i < s.length(); i++){
+        if(valid(s[i])){
+            temp.push_back(s[i]);
+        }
+    }
+
     int start = 0;
-    int end = n - 1;
+    int end = temp.length() - 1;
     while(start <= end){
-        if(s[start] != s[end]){
+        if(toLowerCase(temp[start]) != toLowerCase(temp[end])){
             return false;
         } else {
             start ++ ;
@@ -15,22 +38,11 @@ bool isPalindrome(char s[], int n){
     return true;
 }
 
-int length(char s[]){
-    int count = 0;
-    for(int i = 0; s[i] != '\0'; i++){
-        count++;
-    }
-    return count;
-}
 
 int main(){
-    char s[20];
-    cout << "Enter any word : ";
-    cin >> s;
+    string s = "No#on";
 
-    int len = length(s);
-
-    cout << "Palindrome or not : " << isPalindrome(s, len);
+    cout << "Palindrome or not : " << isPalindrome(s);
 
     return 0;
 }
