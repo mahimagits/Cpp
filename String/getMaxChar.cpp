@@ -4,7 +4,7 @@ using namespace std;
 char getMaxChar(string s){
     int arr[26] = {0};     //count of character in string
     int number = 0;
-    for(int i = 0; i < s.length(); i++){
+    for(int i = 0; i < s.length(); i++){     // Time Complexity = O(n)
         if(s[i] >= 'a' && s[i] <= 'z'){
             number = s[i] - 'a';
         } else {
