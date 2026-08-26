@@ -20,5 +20,21 @@ int main(){
     int i = 5;
     cout << i[arr] << endl; //66
 
+    int temp[4] = {1, 2, 3, 4};
+    int *ptr = &temp[0];
+
+    cout << sizeof(ptr) << endl;
+    cout << sizeof(&ptr) << endl;
+    cout << sizeof(temp) << endl;
+    cout << sizeof(&temp) << endl;
+
+    cout << &temp[0] << endl;
+    cout << &ptr << endl;
+
+    // temp = temp + 1  Error
+    cout << *ptr << endl;
+    ptr = ptr + 1;
+    cout << *ptr << endl;
+
     return 0;
 }
