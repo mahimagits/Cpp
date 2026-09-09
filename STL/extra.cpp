@@ -22,5 +22,10 @@ int main(){
         cout << a[i].first << " " << a[i].second << endl;
     }
 
+    int num = 7;
+    int cnt = __builtin_popcount(num);
+
+    cout << cnt << endl;
+
     return 0;
 }
