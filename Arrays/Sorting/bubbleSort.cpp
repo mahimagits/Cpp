@@ -8,17 +8,18 @@ void printVector(vector<int> &arr, int n){
     }
 }
 
-void bubbleSort(vector<int> &arr, int n){
-    bool swapped = false;
-    for(int i = 1; i < n; i++){
-        for(int j = 0; j < n - i; j++){
-            if(arr[j] > arr[j + 1]){
+void bubbleSort(vector<int> &arr){
+    int n = arr.size();
+    for(int i = (n - 1); i >= 1; i--){
+        bool didSwap = 0;
+        for(int j = 0; j <= (i-1); j++){
+            if(arr[j] > arr[j+1]){
                 swap(arr[j], arr[j+1]);
-                swapped = true;
+                didSwap = 1;
             }
-        }
-        if(swapped == false){
-            break;
+            if(didSwap){
+                break;
+            }
         }
     }
 }
@@ -30,7 +31,7 @@ int main(){
     printVector(nums, nums.size());
 
     cout << "\nAfter Sorting: " << endl;
-    bubbleSort(nums, nums.size());
+    bubbleSort(nums);
     printVector(nums, nums.size());
 
     return 0;

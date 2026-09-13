@@ -8,17 +8,18 @@ void printVector(vector <int> &arr, int n){
     }
 }
 
-void selectionSort(vector<int> &arr, int n){
-    for(int i = 0; i < n - 1; i++){
-        int minInd = i;
-        for(int j = i + 1; j < n; j++){
-            if(arr[j] < arr[minInd]){
-                minInd = j;
+void selectionSort(vector<int> &arr){
+    int n = arr.size();
+    for(int i = 0; i <= (n-2); i++){
+        int mini = i;
+        for(int j = i; j <= (n-1); j++){
+            if(arr[j] < arr[mini]){
+                mini = j;
             }
         }
-        swap(arr[i], arr[minInd]);
+        swap(arr[i], arr[mini]);
     }
-}
+} 
 
 int main(){
     vector<int> num = {24, 10, 15, 2, 0, 74};
@@ -26,7 +27,7 @@ int main(){
     cout << "Before Sorting: " << endl;
     printVector(num, num.size());
 
-    selectionSort(num, num.size());
+    selectionSort(num);
     cout << "\nAfter Sorting: " << endl;
     printVector(num, num.size());
 
