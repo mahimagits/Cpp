@@ -25,6 +25,24 @@ void sort0_1_2(int arr[], int n){
     }
 }
 
+void optimal(int arr[], int n){
+    int left = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid <= high){
+        if(arr[mid] == 0){
+            swap(arr[left], arr[mid]);
+            mid++;
+            left++;
+        } else if (arr[mid] == 1){
+            mid++;
+        } else if (arr[mid] == 2) {
+            swap(arr[mid], arr[high]);
+            high--;
+        }
+    }
+}
+
 void sort(int arr[], int n){
     int zero = 0, one = 0, two = 0;
     for(int i = 0; i < n; i++){
@@ -58,7 +76,7 @@ int main(){
     printArray(num, 8);
 
     cout << endl;
-    sort(num, 8);
+    optimal(num, 8);
 
     printArray(num, 8);
 
