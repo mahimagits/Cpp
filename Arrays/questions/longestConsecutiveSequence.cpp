@@ -30,4 +30,6 @@ int brute(vector<int> &arr){
 int main(){
     vector <int> arr = {102, 4, 100, 1, 101, 3, 2, 1, 1};
     cout << "Longest consecutive sequence : " << brute(arr) << endl;
+
+    return 0;
 }
