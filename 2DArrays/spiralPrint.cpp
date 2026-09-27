@@ -2,60 +2,50 @@
 #include <vector>
 using namespace std;
 
-vector<int> spiralPrint(vector<vector<int>>& matrix){
-    vector<int> ans;
-    int row = matrix.size();
-    int col = matrix[0].size();
-    int total = row*col;
-    int count = 0;
-
-    int startingRow = 0;
-    int endingRow = row - 1;
-    int startingCol = 0;
-    int endingCol = col - 1;
-
-    while(count < total){
-
-        //Printing Starting Row
-        for(int index = startingCol; index <= endingCol && count < total; index++){
-            ans.push_back(matrix[startingRow][index]);
-            count++;
-        }
-        startingRow++;
-
-        //Printing Ending Column
-        for(int index = startingRow; index <= endingRow && count < total; index++){
-            ans.push_back(matrix[index][endingCol]);
-            count++;
-        }
-        endingCol--;
-
-        //Printing Ending Row
-        for(int index = endingCol; index >= startingCol && count < total; index--){
-            ans.push_back(matrix[endingRow][index]);
-            count++;
-        }
-        endingRow--;
-
-        //Printing Starting Column
-        for(int index = endingRow; index >= startingRow && count < total; index--){
-            ans.push_back(matrix[index][startingCol]);
-            count++;
-        }
-        startingCol++;
+void spiralPrint(vector<vector<int>>& matrix){
+    int n = matrix.size();
+    int m = matrix[0].size();
+    int left = 0;
+    int top = 0;
+    int right = m - 1;
+    int bottom = n - 1;
+    while(left <= right && top <= bottom){
+    for(int i = left; i <= right; i++){
+        cout << matrix[top][i] << " ";
     }
-
-    return ans;
+    top++;
+    for(int i = top; i <= bottom; i++){
+        cout << matrix[i][right] << " ";
+    }
+    right--;
+    if(top <= bottom){
+        for(int i = right; i >= left; i--){
+            cout << matrix[bottom][i] << " ";
+        }
+        bottom--;
+    }
+    if(left <= right){
+        for(int i = bottom; i >= top; i--){
+            cout << matrix[i][left] << " ";
+        }
+        left++;
+    }
+    }
 }
 
 int main(){
-    vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    vector<vector<int>> matrix = {{1, 2, 3, 4, 5, 6}, {20, 21, 22, 23, 24, 7}, {19, 32, 33, 34, 25, 8}, {18, 31, 36, 35, 26, 9}, {17, 30, 29, 28, 27, 10}, {16, 15, 14, 13, 12, 11}};
 
-    vector<int> ans = spiralPrint(matrix);
-
-    for(int num : ans){
-        cout << num << " ";
+    for(int i = 0; i < matrix.size(); i++){
+        for(int j = 0; j < matrix[0].size(); j++){
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
     }
+
+    cout << "Spiral Print : " << endl;
+
+    spiralPrint(matrix);
 
     return 0;
 }
