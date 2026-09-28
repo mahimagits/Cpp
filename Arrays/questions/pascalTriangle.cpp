@@ -14,7 +14,7 @@ int getElement(int row, int col){
 
 void printRow(int row){
     int ans = 1;
-    cout << ans << " ";
+    cout << ans  << " ";
     for(int i = 1; i < row; i++){
         ans = ans * (row - i);
         ans = ans/i;
@@ -22,11 +22,19 @@ void printRow(int row){
     }
 }
 
+void generate(int nRows){
+    for(int i = 1; i <= nRows; i++){
+        printRow(i);
+        cout << endl;
+    }
+}
+
 int main(){
     int row = 5;
     int col = 3;
-    cout << getElement(row, col) << endl;
-    printRow(5);
+    // cout << getElement(row, col) << endl;
+    // printRow(5);
+    generate(5);
 
     return 0;
 }
