@@ -19,11 +19,49 @@ vector<int> findMissingAndRepeating(vector<int> &a){
     return {(int)x, (int)y};
 }
 
+vector<int> anotherApproach(vector<int> nums){
+    int n = nums.size();
+    int xr = 0;
+    for(int i = 0; i < n; i++){
+        xr = xr ^ nums[i];
+        xr = xr ^ (i+1);
+    }
+
+    int number = xr & ~(xr - 1);
+
+    int one = 0, zero = 0;
+    for(int i = 0; i < n; i++){
+        if((nums[i] & number) != 0){
+            one = one ^ nums[i];
+        } else {
+            zero = zero ^ nums[i];
+        }
+        if(((i+1) & number) != 0){
+            one = one ^ (i+1);
+        } else {
+            zero = zero ^ (i+1);
+        }
+    }
+    int cnt = 0;
+    for(int i = 0; i < n; i++){
+        if(nums[i] != one) return{zero, one};
+        return {one, zero};
+    }
+
+}
+
 int main(){
     vector<int> nums = {4, 3, 6, 2, 1, 1};
     vector<int> ans = findMissingAndRepeating(nums);
     for(auto num : ans){
         cout << num << " ";
+    }
+
+    cout << endl;
+
+    vector<int> ans2 = anotherApproach(nums);
+    for(auto n : ans2){
+        cout << n << " ";
     }
 
     return 0;
